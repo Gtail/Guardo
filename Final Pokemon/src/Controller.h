@@ -1,0 +1,17 @@
+int Franzoso_controller_loadFromText(char* path , LinkedList* pArrayListMovies);
+int Franzoso_controller_loadFromBinary(char* path , LinkedList* pArrayListPassenger);
+int controller_addPassenger(LinkedList* pArrayListPassenger);
+int controller_editPassenger(LinkedList* pArrayListPassenger);
+int controller_removePassenger(LinkedList* pArrayListPassenger);
+int Franzoso_controller_ListPokemones(LinkedList *pArrayListPokemones);
+int Franzoso_controller_sortPassenger(LinkedList* pArrayListPassenger);
+int Franzoso_controller_saveAsText(char* path , LinkedList* pArrayListPokemones);
+int controller_saveAsBinary(char* path , LinkedList* pArrayListPassenger);
+int controller_SetRating(LinkedList *pArrayMovies);
+int controller_SetGenero(LinkedList* pArrayMovies);
+int Franzoso_controller_filterFire(LinkedList* pArrayListPokemones);
+int Franzoso_controller_filterAguaVarioColor(LinkedList* pArrayListPokemones);
+int controller_filterAccion(LinkedList* pArrayMovies);
+int controller_filterComedia(LinkedList* pArrayMovies);
+int controller_countDrama(LinkedList* pArrayMovies);
+int Franzoso_controller_removePokemon(LinkedList *pArrayListPokemones);
