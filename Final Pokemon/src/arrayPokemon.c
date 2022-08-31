@@ -490,20 +490,19 @@ int Movies_CompararGenero_Rating(void *pelicula1, void *pelicula2) {
 
 void* incrementarValorAtaque(void *t1) {
 	ePokemon *auxPokemon = NULL;
-	int min = 1;
-	int max = 10;
-	int rating;
+	int ataque;
 
 	if (t1 != NULL) {
 		auxPokemon = (ePokemon*) t1;
 		if (auxPokemon != NULL) {
-			rating = (int) (rand() % (max - min + 1)) + min;
-			//Pokemon_setTamanio(auxPokemon, rating);
-
+			if(!strcmp(auxPokemon->tipo, "Fire") || !strcmp(auxPokemon->tipo, "Ground") || !strcmp(auxPokemon->tipo, "Grass")){
+			ataque = auxPokemon->valorAtaque * 1.1;
+			Pokemon_setValorAtaque(auxPokemon, ataque);
+			}
 		}
 	}
 
-	return auxPokemon;
+return auxPokemon;
 }
 
 void* asignarGenero(void *t1) {
@@ -544,17 +543,47 @@ int filtrarFire(void* a)
 
 int filtrarAguaVarioColor(void *a) {
 	int retorno = 0;
-	ePokemon *pMovies;
+	ePokemon *pPokemon;
 
 	if (a != NULL) {
-		pMovies = (ePokemon*) a;
-		if(!strcmp(pMovies->tipo,"Water") && pMovies->esVarioColor)
+		pPokemon = (ePokemon*) a;
+		if(!strcmp(pPokemon->tipo,"Water") && pPokemon->esVarioColor)
 		{
 			retorno=1;
 		}
 	}
 	return retorno;
 }
+
+
+int filtrarFuegoXlLanzallamas(void* a)
+{
+	int retorno=0;
+	ePokemon* pPokemon;
+
+	if(a!=NULL){
+		pPokemon = (ePokemon*) a;
+		if(!strcmp(pPokemon->tipo,"Fire") && !strcmp(pPokemon->ataqueCargado,"Lanzallamas") && !strcmp(pPokemon->tamanio,"XL") && pPokemon->valorAtaque>79){
+			retorno=1;
+		}
+	}
+	return retorno;
+}
+
+int filtrarAguaLHidrobomba(void* a)
+{
+	int retorno=0;
+	ePokemon* pPokemon;
+
+	if(a!=NULL){
+		pPokemon = (ePokemon*) a;
+		if(!strcmp(pPokemon->tipo,"Water") && !strcmp(pPokemon->ataqueCargado,"Hidrobomba") && !strcmp(pPokemon->tamanio,"L") && pPokemon->valorAtaque>79){
+			retorno=1;
+		}
+	}
+	return retorno;
+}
+
 
 
 int filtrarComedia(void *a) {

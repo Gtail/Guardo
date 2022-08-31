@@ -52,7 +52,8 @@ int main(void) {
 				Franzoso_controller_filterFire(listaPokemones);
 				break;
 			case 6:
-				printf("\n Usted ha seleccionado 6: Batalla Pokemon \n");
+				printf("\n Usted ha seleccionado 6: Batalla Pokemon ! \n");
+
 				break;
 			case 7:
 				break;
@@ -69,21 +70,4 @@ int main(void) {
 	return 0;
 }
 
-int menuTen()
-{
-	int opcion;
-	printf("\n\t>-MENU PRINCIPAL-<\t\n");
-	printf("-----------------------------------------\n");
-	printf(" Opcion 1 Cargar archivo de Pokemones \n");
-	printf(" Opcion 2 Eliminar Pokemon \n");
-	printf(" Opcion 3 Imprimir Pokemones \n");
-	printf(" Opcion 4 Filtrar por Agua variocolor \n");
-	printf(" Opcion 5 Mapear Ataque Cargado \n");
-	printf(" Opcion 6 Batalla Pokemon! \n");
-	printf(" Opcion 10 Salir \n");
-
-	scanf("%d", &opcion);
-
-	return opcion;
-}
 

@@ -342,17 +342,25 @@ int Franzoso_controller_filterFire(LinkedList* pArrayListPokemones)
 	return retorno;
 }
 
-int controller_countDrama(LinkedList* pArrayMovies){
+int Franzoso_controller_countGanadores(LinkedList* pArrayMovies){
 	int retorno=-1;
-	int cantidad;
+	int cantidadFire;
+	int cantidadWater;
+	int total;
 	if(pArrayMovies!=NULL){
-		//cantidad=ll_count(pArrayMovies, filtrarDrama);
-		if(cantidad>0){
-			printf("La cantidad de Peliculas de Drama es %d \n", cantidad);
+		cantidadFire=ll_count(pArrayMovies, filtrarFuegoXlLanzallamas);
+		cantidadWater=ll_count(pArrayMovies, filtrarAguaLHidrobomba);
+		total=cantidadFire+cantidadWater;
+
+			printf("La cantidad de pokemones Fuego tamanio XL con ataque Lanzallamas es %d \n", cantidadFire);
+			printf("La cantidad de pokemones Agua tamanio L con ataque HidroBomba es de %d \n", cantidadWater);
+			if(total>2){
+			puts("Con estos Pokemones podemos ganar esta Pelea! \n");
 			retorno=0;
 		}else{
-			puts("No hay peliculas de Drama \n");
+			puts("Oh no! Me temo que no podremos ganar esta batalla :( \n");
 		}
+
 	}
 	return retorno;
 }
@@ -395,4 +403,5 @@ int Franzoso_controller_removePokemon(LinkedList *pArrayListPokemones) {
 	}
 	return retorno;
 }
+
 
